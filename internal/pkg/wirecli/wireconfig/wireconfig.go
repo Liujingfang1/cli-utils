@@ -31,17 +31,6 @@ import (
 	_ "k8s.io/client-go/plugin/pkg/client/auth"
 )
 
-// ConfigProviderSet defines dependencies for initializing ConfigProvider
-//var ConfigProviderSet = wire.NewSet(
-//	NewPluginConfig,
-//	NewResMapFactory,
-//	NewTransformerFactory,
-//	NewFileSystem,
-//	NewKustomizeProvider,
-//	wire.Bind(new(resourceconfig.ConfigProvider), new(*resourceconfig.KustomizeProvider)),
-//	NewResourceConfig,
-//	NewResourcePruneConfig,
-//)
 var ConfigProviderSet = wire.NewSet(
 	KustomizeConfigProvider,
 	RawYAMLConfigProvider,
